@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="Expresso.Pages.SubMenuPage"
              Title="{Binding Name}"
@@ -21,7 +22,11 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid>
-                            <Image Source="{Binding Image}" d:Source="menu.png" HeightRequest="200" Aspect="Fill" />
+                            <ffImageLoading:CachedImage 
+                                    HeightRequest="200" Aspect="Fill"
+                                    DownsampleToViewSize="True"
+                                    Source="{Binding Image}"
+                                    />
                             <BoxView BackgroundColor="Black" Opacity="0.4" />
                             <StackLayout VerticalOptions="End" Margin="10">
                                 <Label d:Text="Name" Text="{Binding Name}" FontSize="Large" TextColor="WhiteSmoke" />

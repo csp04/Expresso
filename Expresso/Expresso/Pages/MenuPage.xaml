@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vms="clr-namespace:Expresso.ViewModels"
+             xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="Expresso.Pages.MenuPage" IsBusy="{Binding IsBusy}">
     <ContentPage.BindingContext>
@@ -20,7 +21,11 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
-                                <Image Source="{Binding Image}" HeightRequest="200" Aspect="Fill" />
+                                <ffImageLoading:CachedImage
+                                    HeightRequest="200" Aspect="Fill"
+                                    DownsampleToViewSize="True"
+                                    Source="{Binding Image}"
+                                    />
                                 <BoxView BackgroundColor="Black" Opacity="0.4" />
                                 <Label Text="{Binding Name}" FontSize="Large" TextColor="White"
                                    HorizontalOptions="Center" VerticalOptions="Center" />
