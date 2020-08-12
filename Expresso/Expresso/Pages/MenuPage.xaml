@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vms="clr-namespace:Expresso.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Expresso.Pages.MenuPage" IsBusy="{Binding IsBusy}">
+    <ContentPage.BindingContext>
+        <vms:MenuPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <ListView x:Name="lvMenus" 
+                SeparatorVisibility="None" 
+                      HasUnevenRows="True" ItemsSource="{Binding Menus}"
+                      ItemSelected="ListView_ItemSelected"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Image Source="{Binding Image}" HeightRequest="200" Aspect="Fill" />
+                                <BoxView BackgroundColor="Black" Opacity="0.4" />
+                                <Label Text="{Binding Name}" FontSize="Large" TextColor="White"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Loading your menus. Please wait..." IsVisible="{Binding IsBusy}" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   />
+            <Label Text="Oops! Couldn't find the menus... :(" IsVisible="{Binding NoLoadedMenus}" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

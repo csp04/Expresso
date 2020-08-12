@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expresso.Android", "Expresso\Expresso.Android\Expresso.Android.csproj", "{72347065-9605-4EF8-ADEB-FD91D3257E78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expresso", "Expresso\Expresso\Expresso.csproj", "{F578939D-7111-4A1F-BDE0-3F3A0FB62F6F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expresso.Api", "Expresso.Api\Expresso.Api.csproj", "{48471711-A059-4DCB-93A5-EC18647AF620}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Expresso.Shared", "Expresso.Shared\Expresso.Shared.shproj", "{FA0C3177-EE74-4E40-840C-B8AADE65432E}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Expresso.Shared\Expresso.Shared.projitems*{48471711-a059-4dcb-93a5-ec18647af620}*SharedItemsImports = 5
+		Expresso.Shared\Expresso.Shared.projitems*{f578939d-7111-4a1f-bde0-3f3a0fb62f6f}*SharedItemsImports = 5
+		Expresso.Shared\Expresso.Shared.projitems*{fa0c3177-ee74-4e40-840c-b8aade65432e}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72347065-9605-4EF8-ADEB-FD91D3257E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72347065-9605-4EF8-ADEB-FD91D3257E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72347065-9605-4EF8-ADEB-FD91D3257E78}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{72347065-9605-4EF8-ADEB-FD91D3257E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72347065-9605-4EF8-ADEB-FD91D3257E78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72347065-9605-4EF8-ADEB-FD91D3257E78}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F578939D-7111-4A1F-BDE0-3F3A0FB62F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F578939D-7111-4A1F-BDE0-3F3A0FB62F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F578939D-7111-4A1F-BDE0-3F3A0FB62F6F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F578939D-7111-4A1F-BDE0-3F3A0FB62F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F578939D-7111-4A1F-BDE0-3F3A0FB62F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F578939D-7111-4A1F-BDE0-3F3A0FB62F6F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{48471711-A059-4DCB-93A5-EC18647AF620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48471711-A059-4DCB-93A5-EC18647AF620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48471711-A059-4DCB-93A5-EC18647AF620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48471711-A059-4DCB-93A5-EC18647AF620}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E225E7D7-E5C7-4F62-8469-DB4D52525FC5}
+	EndGlobalSection
+EndGlobal

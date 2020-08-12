@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vms="clr-namespace:Expresso.ViewModels"
+             x:Class="Expresso.Pages.ReservationPage"
+             BackgroundColor="White"
+             xmlns:h="clr-namespace:Expresso.Helpers"
+             >
+    <ContentPage.BindingContext>
+        <vms:ReservationPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <h:NotBoolConverter x:Key="NotBoolConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid IsEnabled="{Binding SaveCommand.IsExecuting, Converter={StaticResource NotBoolConverter}}">
+            <StackLayout Margin="10" >
+            <Entry Placeholder="Name" Text="{Binding Reservation.Name}" Keyboard="Text" />
+            <Entry Placeholder="Email" Text="{Binding Reservation.Email}" Keyboard="Email"/>
+            <Entry Placeholder="Phone" Text="{Binding Reservation.Phone}" Keyboard="Telephone" />
+            <Entry Placeholder="Total People" Text="{Binding Reservation.TotalPeople}" Keyboard="Numeric" />
+            <Label Text="Booking Date" />
+            <DatePicker Format="D" Date="{Binding Reservation.Date}"/>
+            <Label Text="Booking Time" />
+            <TimePicker Time="{Binding Reservation.Time}" />
+            
+                <Button Text="Book Table" TextColor="White" FontSize="Medium" BackgroundColor="#f50057"
+                    Command="{Binding SaveCommand}"
+                    />
+            </StackLayout>
+            <BoxView BackgroundColor="Black" Opacity="0.5" 
+                     d:IsVisible="False"
+                     IsVisible="{Binding SaveCommand.IsExecuting}"/>
+            <ActivityIndicator IsRunning="{Binding SaveCommand.IsExecuting}"
+                               IsVisible="{Binding SaveCommand.IsExecuting}" ScaleX="0.2" ScaleY="0.2"/>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
